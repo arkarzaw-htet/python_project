@@ -1,3 +1,17 @@
+
+# ============================================================= #
+# Python Individual Project, Year 1, Semester 1                 #
+#                                                               #
+#                                                               #
+# Program: Software Engineering Program                         #
+# University: Faculty of Engineering, KMITL                     #
+#                                                               #
+# Project: Flashcard Master                                     #                                            
+# Repository: https://github.com/arkarzaw-htet/FlashcardMaster  #
+# Written by: Arkar Zaw Htet(68011284)                          #
+# ============================================================= #
+
+
 import random
 import json
 import os

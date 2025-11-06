@@ -428,7 +428,7 @@ class DeletePage(BasePage):
         
         # --- NEW Delete All Button (Rounded) ---
         tk.Button(btn_frame, text="Delete All", font=('Helvetica', 10),
-                 bg='#ef4444', fg=COLOR_TEXT_LIGHT, relief=BUTTON_RELIEF, bd=BUTTON_BORDER_WIDTH, pady=8, 
+                 bg='#ef4444', fg=COLOR_TEXT_LIGHT, relief=BUTTON_RELIEF, bd=BUTTON_BORDER_WIDTH, pady=20, 
                  command=self.delete_all).pack(side='left', padx=(0, 8), anchor='s')
         
         # Separator frame to group the main buttons on the right

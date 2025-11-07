@@ -2,11 +2,8 @@
 # ============================================================= #
 # Python Individual Project, Year 1, Semester 1                 #
 #                                                               #
-#                                                               #
-# Program: Software Engineering Program                         #
-# University: Faculty of Engineering, KMITL                     #
-#                                                               #
-# Project: Flashcard Master                                     #                                            
+# Project: Flashcard Master                                     #                                                       
+#                                                               #                                            
 # Repository: https://github.com/arkarzaw-htet/FlashcardMaster  #
 # Written by: Arkar Zaw Htet(68011284)                          #
 # ============================================================= #
@@ -45,37 +42,30 @@ BUTTON_RELIEF = 'groove'
 
 # --- COMPOSITION: StatTracker Class ---
 class StatTracker:
-    """Manages and calculates statistics for the PracticePage."""
     def __init__(self):
         self._score = 0
         self._total_cards = 0
 
     def get_score(self):
-        """Returns the current score."""
         return self._score
 
     def get_total_cards(self):
-        """Returns the total number of cards in the session."""
         return self._total_cards
 
     def reset(self, total_cards):
-        """Rests stats for a new practice session."""
         self._score = 0
         self._total_cards = total_cards
 
     def increment_score(self):
-        """Adds one point to the score."""
         self._score += 1
 
     def get_percentage(self):
-        """Calculates the score percentage."""
         try:
             return round((self._score / self._total_cards) * 100, 1)
         except ZeroDivisionError:
             return 0.0
 
     def get_display(self):
-        """Returns the score string for display (e.g., 'Score: 5/10')."""
         return f"Score: {self._score}/{self._total_cards}"
 
 
@@ -84,11 +74,10 @@ class FlashcardApp(tk.Tk):
         super().__init__()
         self.title("Flashcard Master")
         self.configure(bg=COLOR_PRIMARY_DARK) 
-        
+
         # Prevent the blank window flash
         self.withdraw() 
         
-        # --- WINDOW CENTERING CALCULATION ---
         window_width = 1000 
         window_height = 900 
         
@@ -327,12 +316,12 @@ class EditPage(BasePage, FormMixin):
         self.listbox = tk.Listbox(frame, font=('Helvetica', 12), borderwidth=1, relief="solid", bg="#f7f7f7", fg=COLOR_TEXT_DARK) # Added bg/fg
         self.listbox.pack(side='left', fill='both', expand=True, padx=(30, 15), pady=30)
         self.listbox.bind("<<ListboxSelect>>", self.load)
-        
+
         right = tk.Frame(frame, bg=COLOR_CARD_BG)
         right.pack(side='right', fill='both', expand=True, padx=(15, 30), pady=30)
         
         self.q_text, self.a_text = self.create_form_fields(right)
-        
+
         self.btn_frame = tk.Frame(right, bg=COLOR_CARD_BG)
         self.btn_frame.pack(fill='x', side='bottom', pady=(0, 30))
         

@@ -31,18 +31,15 @@ except ImportError:
         print("Error: Tkinter/Tkinter module not found. The application cannot run.")
         exit()
 
-# --- NEW COLOR PALETTE (Refined Green/Accent) ---
-COLOR_PRIMARY_DARK = '#36394E'   # Deep Indigo/Slate Background
-COLOR_SECONDARY = '#454866'      # Slightly Lighter Panel Background
-COLOR_ACCENT = "#0F1BA3"         # Deep Blue Accent
-COLOR_SUCCESS_GREEN = "#00be20"  # Vibrant Success Green
+COLOR_PRIMARY_DARK = '#36394E'  
+COLOR_SECONDARY = '#454866'     
+COLOR_ACCENT = "#0F1BA3"        
+COLOR_SUCCESS_GREEN = "#00be20" 
 COLOR_TEXT_LIGHT = 'white'
-COLOR_TEXT_DARK = '#2C2F43'      # Dark Text
-COLOR_CARD_BG = "#8ece98"        # Light Green Card Background
+COLOR_TEXT_DARK = '#2C2F43'     
+COLOR_CARD_BG = "#8ece98"       
 
-# --- Configuration for Button Radius ---
-# Standard Tkinter buttons do not have a corner radius property.
-# We will simulate a softer edge by using a small border width and 'groove' relief.
+
 BUTTON_BORDER_WIDTH = 4 
 BUTTON_RELIEF = 'groove' 
 
@@ -229,7 +226,7 @@ class MainMenu(BasePage):
         self.count_label.pack(pady=20) 
         
         buttons = [
-            ("Add Flashcard", lambda: controller.show_frame("AddPage"), COLOR_SUCCESS_GREEN),  # Use new green
+            ("Add Flashcard", lambda: controller.show_frame("AddPage"), COLOR_SUCCESS_GREEN),  
             ("Edit Flashcards", lambda: controller.show_frame_if_cards("EditPage"), '#f59e0b'), 
             ("Delete Flashcards", lambda: controller.show_frame_if_cards("DeletePage"), '#ef4444'), 
             ("Practice Mode", lambda: controller.show_frame_if_cards("PracticePage"), COLOR_ACCENT) 

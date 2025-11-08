@@ -2,8 +2,8 @@
 # ============================================================= #
 # Python Individual Project, Year 1, Semester 1                 #
 #                                                               #
-# Project: Flashcard Master                                     #                                                       
-#                                                               #                                            
+# Project: Flashcard Master                                     #
+#                                                               # 
 # Repository: https://github.com/arkarzaw-htet/FlashcardMaster  #
 # Written by: Arkar Zaw Htet(68011284)                          #
 # ============================================================= #
@@ -41,7 +41,7 @@ BUTTON_BORDER_WIDTH = 4
 BUTTON_RELIEF = 'groove' 
 
 # --- COMPOSITION: StatTracker Class ---
-class StatTracker:
+class StatTracker(object):
     def __init__(self):
         self._score = 0
         self._total_cards = 0
@@ -103,12 +103,26 @@ class FlashcardApp(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        
-        for F in (MainMenu, AddPage, EditPage, DeletePage, PracticePage):
-            page_name = F.__name__
-            frame = F(parent=container, controller=self)
-            self.frames[page_name] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
+
+        main_menu = MainMenu(parent=container, controller=self)
+        self.frames["MainMenu"] = main_menu
+        main_menu.grid(row=0, column=0, sticky="nsew")
+
+        add_page = AddPage(parent=container, controller=self)
+        self.frames["AddPage"] = add_page
+        add_page.grid(row=0, column=0, sticky="nsew")
+
+        edit_page = EditPage(parent=container, controller=self)
+        self.frames["EditPage"] = edit_page
+        edit_page.grid(row=0, column=0, sticky="nsew")
+
+        delete_page = DeletePage(parent=container, controller=self)
+        self.frames["DeletePage"] = delete_page
+        delete_page.grid(row=0, column=0, sticky="nsew")
+
+        practice_page = PracticePage(parent=container, controller=self)
+        self.frames["PracticePage"] = practice_page
+        practice_page.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame("MainMenu")
         
@@ -181,7 +195,7 @@ class BasePage(tk.Frame, ABC):
         """Called by the controller when the frame is shown."""
         pass
 
-class FormMixin:
+class FormMixin(object):
     """Mixin to create standard Question and Answer text fields with internal padding."""
     def create_form_fields(self, parent_frame):
         # Increased background color to match COLOR_CARD_BG

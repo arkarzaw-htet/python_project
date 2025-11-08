@@ -1,5 +1,14 @@
-{
-  "What is the capital of France?": "Paris",
-  "What does HTML stand for?": "HyperText Markup Language",
-  "Who painted the Mona Lisa?": "Leonardo da Vinci"
-}
+[
+  {
+    "question": "What is the capital of France?",
+    "answer": "Paris"
+  },
+  {
+    "question": "What does HTML stand for?",
+    "answer": "HyperText Markup Language"
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answer": "Leonardo da Vinci"
+  }
+]

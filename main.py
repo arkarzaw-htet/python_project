@@ -30,7 +30,7 @@ except ImportError:
 # --- App-wide Color & Style Constants ---
 COLOR_PRIMARY_DARK = '#36394E'  
 COLOR_SECONDARY = '#454866'     
-COLOR_ACCENT = "#0F1BA3"        
+COLOR_ACCENT = "#0F2BA3"        
 COLOR_SUCCESS_GREEN = "#00be20" 
 COLOR_TEXT_LIGHT = 'white'
 COLOR_TEXT_DARK = '#2C2F43'     
@@ -56,8 +56,6 @@ class Flashcard(object):
             'answer': self.answer
         }
     
-    # We removed the from_dict classmethod.
-    # The logic for loading from a dict is now in FlashcardApp.load_flashcards()
 
     def __repr__(self):
         """A helper for debugging. Lets us print a Flashcard object and see something useful."""
